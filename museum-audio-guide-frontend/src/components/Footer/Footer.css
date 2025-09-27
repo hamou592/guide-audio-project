@@ -1,0 +1,19 @@
+.museum-footer {
+  width: 100%;
+  background: #2d3a4a;
+  color: #fff;
+  text-align: center;
+  padding: 0px 0 16px;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  font-size: 1rem;
+  z-index: 10;
+}
+
+@media (max-width: 600px) {
+  .museum-footer {
+    font-size: 0.95rem;
+    padding: 12px 0;
+  }
+}

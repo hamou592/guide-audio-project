@@ -1,0 +1,282 @@
+:root {
+  --museum-blue: #2d3a4a;
+  --museum-gold: #bfa14a;
+  --museum-bg: #f5f5f5;
+  --museum-card-bg: #fff;
+  --museum-card-shadow: 0 4px 16px rgba(44, 44, 84, 0.10);
+}
+
+.room-page-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 20px;
+  background: var(--museum-bg);
+  min-height: 100vh;
+}
+
+/* Room header as background with overlay and centered content */
+.room-header-bg {
+  position: relative;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 32px;
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  box-shadow: 0 2px 12px rgba(44, 44, 84, 0.08);
+  overflow: hidden;
+}
+
+.room-header-overlay {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(45, 58, 74, 0.55);
+  z-index: 1;
+}
+
+.room-header-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  width: 100%;
+  padding: 32px 20px 24px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.room-header-content h1 {
+  color: #fff;
+  margin-bottom: 10px;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 8px rgba(44,44,84,0.18);
+}
+
+.room-header-content .room-description {
+  color: #f5f5f5;
+  max-width: 800px;
+  margin: 0 auto 16px auto;
+  font-size: 1.1rem;
+  text-shadow: 0 2px 8px rgba(44,44,84,0.18);
+  line-height: 1.4;
+}
+
+/* Back button */
+.back-btn {
+  display: block;
+  margin: 0 auto 32px auto;
+  background: var(--museum-gold);
+  color: var(--museum-blue);
+  border: none;
+  border-radius: 8px;
+  padding: 10px 28px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.18s;
+  box-shadow: 0 2px 8px rgba(44,44,84,0.08);
+}
+.back-btn:hover {
+  background: var(--museum-blue);
+  color: #fff;
+}
+
+.objects-section {
+  margin-top: 20px;
+}
+
+.objects-section h2 {
+  color: var(--museum-blue);
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+/* Objects grid */
+.objects-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  padding: 20px 0;
+}
+
+@media (max-width: 1200px) {
+  .objects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .objects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .objects-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on phones */
+  }
+  .room-header-content h1 {
+    font-size: 1.8rem;
+  }
+  .room-header-content .room-description {
+    font-size: 1rem;
+  }
+  .object-info h3 {
+    font-size: 1rem;
+  }
+  .object-info p {
+    font-size: 0.9rem;
+  }
+  .object-year,
+  .object-artist {
+    font-size: 0.85rem;
+  }
+}
+
+/* Object card */
+.object-card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.object-card {
+  background: var(--museum-card-bg);
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: var(--museum-card-shadow);
+  transition: transform 0.18s, box-shadow 0.18s;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  outline: none;
+  min-height: 340px;
+}
+
+.object-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(44, 44, 84, 0.18);
+}
+
+.object-image {
+  width: 100%;
+  height: 180px;
+  overflow: hidden;
+  background: #eaeaea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.object-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.object-info {
+  padding: 22px 18px 18px 18px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.object-info h3 {
+  color: var(--museum-blue);
+  margin-bottom: 10px;
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.object-info p {
+  color: #666;
+  font-size: 1rem;
+  margin: 0 0 10px 0;
+  line-height: 1.4;
+}
+
+.object-year,
+.object-artist {
+  color: #888;
+  font-size: 0.95rem;
+  margin-top: 5px;
+}
+
+/* Loading and error states */
+.room-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 50vh;
+}
+
+.loader {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid var(--museum-blue);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg);}
+  100% { transform: rotate(360deg);}
+}
+
+.room-error {
+  text-align: center;
+  color: #ff4d4f;
+  padding: 20px;
+  margin: 20px;
+  background: #fff1f0;
+  border-radius: 8px;
+}
+
+.no-objects {
+  text-align: center;
+  padding: 40px;
+  color: #666;
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  background-color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+
+
+.pagination button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pagination .active {
+  background-color: #2d3a4a;
+  color: white;
+  border-color: #2d3a4a;
+}

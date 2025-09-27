@@ -1,0 +1,219 @@
+/* Reset body and html for full viewport and no margin */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+  background: linear-gradient(135deg, #e9e4f0 0%, #d3cbb8 100%);
+  min-height: 100vh;
+}
+
+/* Full screen container */
+.ticket-entry-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+}
+
+/* Blur overlay */
+.background-blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(12px);
+  background-color: rgba(255, 255, 255, 0.15);
+  z-index: 0;
+}
+
+/* Main wrapper */
+.ticket-entry-wrapper {
+  position: relative;
+  z-index: 1;
+  width: 90%;
+  max-width: 400px;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Heart icon with added bottom margin for spacing */
+.heart-icon-svg {
+  margin-bottom: 60px; /* Increased space between heart and input */
+}
+
+/* Form input with plus button */
+.ticket-entry-form {
+  width: 100%;
+}
+
+.input-wrapper {
+  display: flex;
+  width: 100%;
+  background: #fff;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(44, 44, 84, 0.1);
+}
+
+.ticket-entry-input {
+  flex-grow: 1;
+  border: none;
+  padding: 14px 20px;
+  font-size: 1.1rem;
+  border-radius: 30px 0 0 30px;
+  outline: none;
+  color: #2d3a4a;
+  font-weight: 600;
+  background: #fff;
+}
+
+.ticket-entry-input::placeholder {
+  color: #999;
+  font-weight: 500;
+}
+
+.input-submit-btn {
+  width: 50px;
+  background: #000;
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 0 30px 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.3s ease;
+}
+
+.input-submit-btn:disabled {
+  background: #555;
+  cursor: not-allowed;
+}
+
+.input-submit-btn:not(:disabled):hover {
+  background: #333;
+}
+
+/* Separator with lines and "OU" */
+.separator {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 30px 0 20px 0;
+  color: #000;
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.separator .line {
+  flex-grow: 1;
+  height: 1px;
+  background: #000;
+  opacity: 0.3;
+  margin: 0 12px;
+}
+
+/* Scan QR button */
+.scan-qr-btn {
+  width: 100%;
+  background: #fff;
+  border-radius: 30px;
+  border: none;
+  padding: 14px 0;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #000;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  box-shadow: 0 2px 8px rgba(44, 44, 84, 0.1);
+  transition: background 0.3s ease;
+}
+
+.scan-qr-btn:hover:not(:disabled) {
+  background: #f0f0f0;
+}
+
+.scan-qr-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* QR icon inside button */
+.scan-qr-btn svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* QR reader container */
+.qr-reader-container {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Hide the Html5QrCode element's default header */
+#reader__header_message {
+  display: none;
+}
+
+/* Style the scan region */
+#reader__scan_region {
+  background: white;
+  padding: 10px;
+}
+
+/* Hide the default dashboard section */
+#reader__dashboard_section {
+  display: none;
+}
+
+/* Error message */
+.ticket-entry-error {
+  margin-top: 20px;
+  color: #ff4d4f;
+  background: #fff0f0;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  text-align: center;
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .ticket-entry-wrapper {
+    max-width: 90vw;
+  }
+  .heart-icon-svg {
+    margin-bottom: 50px;
+    width: 36px;
+    height: 36px;
+  }
+  .input-submit-btn {
+    width: 44px;
+    font-size: 1.8rem;
+  }
+  .scan-qr-btn svg {
+    width: 20px;
+    height: 20px;
+  }
+}

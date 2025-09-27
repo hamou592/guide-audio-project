@@ -1,0 +1,17 @@
+/* src/index.css */
+
+@media (max-width: 900px) {
+  div[style*="margin-left: 260px"] {
+    margin-left: 0 !important;
+    padding: 16px !important;
+  }
+}
+
+.MuiTableCell-root {
+  word-wrap: break-word;
+  max-width: 150px;
+}
+
+.MuiButton-root {
+  min-width: 80px;
+}
