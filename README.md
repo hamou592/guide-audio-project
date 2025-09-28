@@ -136,7 +136,7 @@ Start development server:
 
 npm start
 
-<--📸 Screenshots
+<!--📸 Screenshots
 Admin Panel
 
 Dashboard (Screenshot)
@@ -155,7 +155,7 @@ Ticket Validation (Screenshot)
 
 Museum Rooms (Screenshot)
 
-Objects Showcase with Audio (Screenshot) !-->
+Objects Showcase with Audio (Screenshot) -->
 
 🔮 Future Improvements
 
